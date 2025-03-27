@@ -24,15 +24,30 @@
   </nav>
 
   <div class="label-container">
-    <span class="date">March 27, 2025</span>
+    <span class="date" id="currentDate"></span>
     <div class="social-links">
       <a href="#" class="social-icon">Facebook</a>
       <a href="#" class="social-icon">Twitter</a>
       <a href="#" class="social-icon">Instagram</a>
     </div>
-
+  </div>
 
   <script>
+    // Display current date dynamically
+    function updateDate() {
+      const today = new Date();
+      const formattedDate = today.toLocaleDateString('en-US', {
+        weekday: 'long',
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric'
+      });
+      document.getElementById('currentDate').textContent = formattedDate;
+    }
+
+    updateDate(); // Call to display date initially
+
+    // Mobile navbar toggle
     const hamburger = document.getElementById('hamburger');
     const navLinks = document.querySelector('.nav-links');
 

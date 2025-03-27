@@ -1,0 +1,119 @@
+/* CSS (Save as style.css) */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #2f68ca;
+  padding: 10px 20px;
+}
+
+.logo {
+  color: white;
+  font-size: 24px;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+}
+
+.nav-links li a {
+  color: white;
+  text-decoration: none;
+  padding: 10px 20px;
+  transition: 0.3s;
+}
+
+.nav-links li a:hover {
+  background-color: #555;
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.hamburger span {
+  background-color: white;
+  height: 3px;
+  width: 25px;
+  margin: 4px;
+  transition: 0.4s;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: #333;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .hamburger.toggle span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+
+  .hamburger.toggle span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.toggle span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+  }
+}
+
+/* label container */
+
+.label-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #a2a6aa;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 97%;
+}
+
+.date {
+  font-size: 16px;
+}
+
+.social-links {
+  display: flex;
+  gap: 10px;
+}
+
+.social-icon {
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+/* Responsive for smaller screens */
+@media (max-width: 480px) {
+  .label-container {
+    flex-direction: column;
+    text-align: center;
+  }
+  .social-links {
+    margin-top: 10px;
+  }
+}

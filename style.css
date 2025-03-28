@@ -1,4 +1,3 @@
-/* CSS (Save as style.css) */
 body, html {
   margin: 0;
   padding: 0;
@@ -132,4 +131,109 @@ body, html {
   object-fit: cover; /* Ensures the image covers the banner area */
 }
 
+/* banner content */
+.banner-content {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+}
 
+.banner-content h1 {
+  font-size: 4rem;
+  margin: 0;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+  font-weight: bold;
+}
+
+.banner-content p {
+  font-size: 1.5rem;
+  margin: 5px 0;
+  letter-spacing: 1px;
+}
+
+.categories {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.categories span {
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  padding: 12px 24px;
+  border-radius: 25px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s;
+}
+
+.categories span:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+  transform: translateY(-3px);
+}
+
+/* Latest News Section */
+.latest-news {
+  margin-top: 10px;
+  padding: 10px;
+  background-color: #f9f9f9;
+}
+
+.latest-news h2 {
+  text-align: left;
+  margin-bottom: 20px;
+  margin-left: 5px;
+  font-size: 2rem;
+}
+
+.news-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.news-card {
+  background-color: white;
+  border-radius: 8px;
+  overflow: hidden;
+  width: 23%;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+}
+
+.news-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.news-card h3 {
+  margin: 15px;
+  font-size: 1.2rem;
+}
+
+.news-card p {
+  margin: 0 15px 20px;
+  color: #555;
+}
+
+.news-card:hover {
+  transform: translateY(-5px);
+}
+
+@media (max-width: 1024px) {
+  .news-card {
+    width: 45%;
+  }
+}
+
+@media (max-width: 600px) {
+  .news-card {
+    width: 100%;
+  }
+}

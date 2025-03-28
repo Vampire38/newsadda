@@ -73,12 +73,34 @@ $news['content'] = insertImages($news['content'], $optionalImages);
     </div>
   </nav>
   <div class="news-detail">
+  <h1><?php echo htmlspecialchars($news['title']); ?></h1>
     <?php if (!empty($news['banner_image'])): ?>
       <img src="<?php echo htmlspecialchars($news['banner_image']); ?>" alt="Banner Image" />
     <?php endif; ?>
 
-    <h1><?php echo htmlspecialchars($news['title']); ?></h1>
+    
     <p><?php echo nl2br($news['content']); ?></p>
   </div>
+
+  <script>
+     const hamburger = document.getElementById('hamburger');
+    const navLinks = document.querySelector('.nav-links');
+
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+      hamburger.classList.toggle('toggle');
+    });
+  </script>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <p>&copy; 2025 NewsAdda. All Rights Reserved.</p>
+      <ul class="footer-links">
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Terms of Service</a></li>
+        <li><a href="#">Contact Us</a></li>
+      </ul>
+    </div>
+  </footer>
 </body>
 </html>

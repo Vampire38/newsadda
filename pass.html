@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="pass.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+      <div class="logo">NewsAdda</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="login.php">Login/Signup</a></li>
+      </ul>
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </nav>
+
+    <div class="login-container">
+        <h2>Login</h2>
+        <form id="loginForm">
+            <label for="username">Name:</label>
+            <input type="text" id="username" placeholder="Enter your name" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" placeholder="Enter your password" required>
+
+            <button type="submit">Login</button>
+            <p id="error-message"></p>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById("loginForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            let username = document.getElementById("username").value;
+            let password = document.getElementById("password").value;
+
+            // Hardcoded credentials (Replace with backend validation later)
+            const validUsername = "admin";
+            const validPassword = "12345";
+
+            if (username === validUsername && password === validPassword) {
+                window.location.href = "admin.html";  // Redirect to editor page
+            } else {
+                document.getElementById("error-message").textContent = "Invalid username or password!";
+            }
+        });
+
+        // Mobile Navbar Toggle
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.querySelector('.nav-links');
+
+        hamburger.addEventListener('click', () => {
+          navLinks.classList.toggle('active');
+          hamburger.classList.toggle('toggle');
+        });
+    </script>
+
+</body>
+</html>

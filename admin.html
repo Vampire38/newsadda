@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Page - NewsAdda</title>
+  <link rel="stylesheet" href="admin.css" />
+</head>
+<body>
+
+  <!-- Navbar Section -->
+  <nav class="admin-navbar">
+    <div class="logo">NewsAdda Admin</div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <!-- <li><a href="#">Manage Content</a></li>
+      <li><a href="#">Settings</a></li> -->
+      <li><a href="index.html">Logout</a></li>
+    </ul>
+  </nav>
+
+  <div class="container" style="margin-top:80px;">
+    <h1>Admin Panel</h1>
+
+    <!-- Banner Image Upload -->
+    <label>Upload Banner Image:</label>
+    <input type="file" id="bannerUpload" accept="image/*" />
+    <div id="bannerPreview" class="preview"></div>
+
+    <!-- Title Input -->
+    <label>Title of the Content:</label>
+    <input type="text" id="contentTitle" placeholder="Enter content title" />
+
+    <!-- Content Input -->
+    <label>Write Your Content:</label>
+    <textarea id="contentBody" rows="8" placeholder="Write your article..."></textarea>
+
+    <!-- Optional Image Upload -->
+    <label>Upload Optional Image (within content):</label>
+    <input type="file" id="optionalImageUpload" accept="image/*" />
+    <input type="text" id="optionalImageHeading" placeholder="Image Heading (optional)" />
+    <div id="optionalImagePreview" class="preview"></div>
+
+    <button onclick="submitContent()">Submit Content</button>
+  </div>
+
+  <script>
+    // Preview for Banner Image
+    document.getElementById('bannerUpload').addEventListener('change', function (e) {
+      const reader = new FileReader();
+      reader.onload = function (e) {
+        document.getElementById('bannerPreview').innerHTML = `<img src="${e.target.result}" alt="Banner Preview" />`;
+      };
+      reader.readAsDataURL(e.target.files[0]);
+    });
+
+    // Preview for Optional Image
+    document.getElementById('optionalImageUpload').addEventListener('change', function (e) {
+      const reader = new FileReader();
+      reader.onload = function (e) {
+        document.getElementById('optionalImagePreview').innerHTML = `<img src="${e.target.result}" alt="Optional Image Preview" />`;
+      };
+      reader.readAsDataURL(e.target.files[0]);
+    });
+
+    function submitContent() {
+      const title = document.getElementById('contentTitle').value;
+      const content = document.getElementById('contentBody').value;
+      const imageHeading = document.getElementById('optionalImageHeading').value;
+
+      if (!title || !content) {
+        alert('Please provide title and content before submitting.');
+        return;
+      }
+
+      alert('Content Submitted Successfully!');
+    }
+  </script>
+</body>
+</html>

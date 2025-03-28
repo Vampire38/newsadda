@@ -1,0 +1,129 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+  }
+  
+  body {
+    background-color: #f9f9f9;
+    color: #333;
+  }
+  
+  /* Navbar Styling */
+  .admin-navbar {
+    background-color: #007bff;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+  }
+  
+  .admin-navbar .logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+  }
+  
+  .admin-navbar .nav-links {
+    list-style: none;
+    display: flex;
+  }
+  
+  .admin-navbar .nav-links li {
+    margin-left: 20px;
+  }
+  
+  .admin-navbar .nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s;
+  }
+  
+  .admin-navbar .nav-links a:hover {
+    color: #ffdd57;
+  }
+  
+  /* Container Styling */
+  .container {
+    background-color: white;
+    margin: 80px auto;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    width: 80%;
+    max-width: 800px;
+  }
+  
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  label {
+    display: block;
+    margin-top: 1rem;
+    font-weight: bold;
+  }
+  
+  input[type="text"],
+  textarea,
+  input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+  }
+  
+  textarea {
+    resize: none;
+  }
+  
+  button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    margin-top: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Image Preview Styling */
+  .preview img {
+    margin-top: 10px;
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 600px) {
+    .admin-navbar {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .admin-navbar .nav-links {
+      margin-top: 10px;
+    }
+  
+    .container {
+      width: 90%;
+    }
+  }

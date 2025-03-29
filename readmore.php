@@ -35,7 +35,7 @@ function insertImages($content, $optionalImages) {
     }
 
     foreach ($optionalImages as $image) {
-        $imageTag = "<img src='" . htmlspecialchars($image) . "' alt='Optional Image' style='max-width:100%; margin: 10px 0;'/>
+        $imageTag = "<img src='" . htmlspecialchars($image) . "' alt='Optional Image' style='max: width 50px;%; margin: center; '/>
         ";
         $content = preg_replace('/\[image\]/', $imageTag, $content, 1);
     }
